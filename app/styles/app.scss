@@ -1,0 +1,38 @@
+
+/*
+ * Base structure
+ */
+
+body {
+	padding-top: 0px;
+	background-color: white;
+}
+
+/*
+ * Top navigation
+ *
+ */
+
+@import "header.scss";
+
+/*
+ * Main content
+ */
+@import "main.scss";
+/*
+Footer
+*/
+
+@import "footer.scss";
+
+/*
+	Quiz Page - result
+*/
+
+@import "quiz-result.scss";
+
+/*
+	Quiz Page - questions
+*/
+
+@import "quiz-question.scss"

@@ -1,0 +1,83 @@
+.navbar-fixed-bot {
+	display: flex;
+	background-color: rgba(6, 240, 209, 0.753);
+	justify-content: flex-start;
+	align-content: space-between;
+	margin-top: 0px;
+	border-top: 1px solid grey;
+}
+.copyright {
+	margin-top: 5px;
+}
+a[href$="/mcQuiz"]{
+	margin-top: 10px;
+	border: 0.5px solid lightgray;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	border-radius: 0.3rem;
+	color: black;
+	display: block;
+}
+a[href$="/mcQuiz"]:hover{
+	text-decoration: none;
+	background-color: #d3d3d381;
+	-webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+	-moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+	box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+}
+
+a[href$="/mcQuiz"]:before{
+	width: 16px;
+	height: 16px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: -2px;
+	background-image: url("/assets/GitHub-Mark.png");
+	background-color: #cccccc;
+	border: 1px solid #cccccc;
+	border-radius: 50%;
+	background-size: cover;
+	display: inline-block;
+	content: ' ';
+}
+
+a[href$="/mcQuiz"]{
+	margin-top: 10px;
+	border: 0.5px solid gray;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	border-radius: 0.3rem;
+	color: black;
+	display: block;
+}
+
+
+a[href$="https://docyet.com/"]{
+	margin-top: 10px;
+	border: 0.5px solid gray;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	border-radius: 0.3rem;
+	color: black;
+	display: block;
+}
+
+a[href$="https://docyet.com/"]:hover{
+	text-decoration: none;
+	background-color: #d3d3d381;
+	-webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+	-moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+	box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.50);
+}
+
+a[href$="https://docyet.com/"]:before{
+	width: 18px;
+	height: 16px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: -2px;
+	background-image: url("/assets/logo.jpg");
+	background-color: #cccccc;
+	background-size: cover;
+	display: inline-block;
+	content: ' ';
+}

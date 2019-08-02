@@ -1,0 +1,17 @@
+{{quiz/question
+
+	question = currentQuestion
+	selectedAnswer = selectedAnswer	
+	currentQuestionIndex = currentQuestionIndex
+	questionnaireLength = questionnaireLength
+	questionnaireScore = questionnaireScore
+	currentQuestionNum = currentQuestionNum
+}}
+<form class="quizContainer">
+	<div class="quizContainerButtons">
+		<button type="submit" {{action "submitAnswer"}}>Submit answer</button>
+	</div>
+</form>
+<p style="font-size: 20px"><strong>{{responseMessage}}</strong></p>
+<div>Score: {{quizScore}} </div>
+

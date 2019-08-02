@@ -1,0 +1,17 @@
+<div class="questionAnswer">
+	<h4 class="questions-header">Questions: </h4>
+	<br>
+	<ol>
+		<br>
+		{{#each answers as |answer|}}
+			<li>{{answer.question.question}}</li>
+				{{#if (eq answer.content answer.question.correct_answer)}}
+					<a style="color:green"> Your answer: {{answer.content}}</a>
+					<br>
+				{{else}}
+					<a style="color:red"> Your answer: {{answer.content}} <a style="color:black">| (Correct answer: {{answer.question.correct_answer}})</a> </a>
+					<br>
+				{{/if}}
+		{{/each}}
+	</ol>
+</div>

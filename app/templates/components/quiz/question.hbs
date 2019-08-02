@@ -1,0 +1,18 @@
+<form class="quizContainer">
+	<div class="quizContainerQuestions">
+		{{#if question}}
+			<h3>{{question.question}}</h3>
+			<h5><strong>Difficulty: {{question.difficulty}}</strong></h5> 
+			<br>
+			<div>Question: {{currentQuestionNum}} out of {{questionnaireLength}}</div>
+			<br>
+		{{/if}}
+		<div class="quizContainerAnswers">
+			{{#if question}}
+				{{#each answers as |answer|}}
+					<input  type="button" class="Questions" {{action "selectAnswer" answer}} value={{answer}}>
+				{{/each}}
+			{{/if}}
+		</div>
+	</div>
+</form>

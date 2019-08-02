@@ -1,0 +1,27 @@
+
+{{#if (gt questionIndexGreaterThan questionnaireLength)}}
+	{{quiz/result/answered
+
+		currentQuestionIndex = currentQuestionIndex
+		questionnaireLength = questionnaireLength
+		quizScore = quizScore
+		questionnaireScore = questionnaireScore
+		answers = answers
+		getAnswered = (action "getAnswered")
+	}}
+
+	{{else}}
+
+	{{quiz/game
+
+		questions = questions
+		currentQuestionIndex = currentQuestionIndex
+		selectNextQuestion = (action "selectNextQuestion")
+		quizScore = quizScore
+		answerQuestion = (action "answerQuestion")
+		questionnaireLength = questionnaireLength
+		questionIndexGreaterThan = questionIndexGreaterThan
+		responseMessage = responseMessage
+		selectedAnswer = selectedAnswer
+	}}
+{{/if}}

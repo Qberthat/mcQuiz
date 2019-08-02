@@ -1,0 +1,25 @@
+<div class="jumbotron">
+	<div class="resultContainer">
+		<p>You scored </p>
+		<p> <strong>{{quizScore}}</strong> out of <strong>{{questionnaireScore}}</strong> total points!</p>
+	</div>
+	{{#if (eq showAnswers false)}}
+		<div class="rightContainer">
+			<br>
+			<p>To check your results, click</p>
+			<button type="submit" class="toggle" {{action "showAnswered" answer}} value = {{answers.content}}>here</button>
+		</div>
+		{{/if}}
+		{{#if showAnswers}}
+			<div class="questionAnswer">
+				<div class="questionContent">
+					{{quiz/result/questions 
+					
+						answers = answers
+					}}
+				</div>
+		</div>
+	{{/if}}
+</div>
+
+
