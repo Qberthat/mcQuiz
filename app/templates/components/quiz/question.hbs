@@ -1,10 +1,9 @@
 <form class="quizContainer">
 	<div class="quizContainerQuestions">
 		{{#if question}}
-		<h4>{{timer}} </h4>
 			<h3>{{question.question}}</h3>
 			<h5><strong>Difficulty: {{question.difficulty}}</strong></h5> 
-			<br>
+			<p>Time: {{timer}}s</p>
 			<div>Question: {{currentQuestionNum}} out of {{questionnaireLength}}</div>
 			<br>
 		{{/if}}

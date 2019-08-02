@@ -2,7 +2,7 @@ import Controller from '@ember/controller';
 import { inject } from '@ember/service';
 import { on } from '@ember/object/evented';
 import { computed } from '@ember/object';
-import { later } from '@ember/runloop';
+import { run, later } from '@ember/runloop';
 
 export default Controller.extend({
 	store: inject(),
@@ -17,9 +17,9 @@ export default Controller.extend({
 	quotMark: "'",
 	questionnaireLength: 15,
 	responseMessage:'',
-	time: 0,
-	startTime: null,
-	_interval: null,
+	seconds: 0,
+	start: null,
+	interval: null,
 
 	loadQuestions: on('init', function () {
 		const controller = this;
@@ -53,11 +53,18 @@ export default Controller.extend({
 		return parseInt(totalScore * 2);
 	}),
 
-	timer: computed('time', function (){
-		
+	timer: computed('seconds', function(){
+		const that = this;
+		let seconds = this.get('seconds')
+		if (that.interval === null) {
+			that.set('start', Date.now());
+			that.interval = setInterval(function() {
+				const start = that.get('start');
+				that.set('seconds', Date.now() - start);
+			}, 1000);
+		}
+		return parseInt(seconds / 1000);
 	}),
-	
-
 
 		/**
 			*selectNextQuestion() =
@@ -74,6 +81,7 @@ export default Controller.extend({
 
 		selectNextQuestion() {
 			this.set('currentQuestionIndex', this.get('currentQuestionIndex') + 1);
+			this.get('timer');
 		},
 
 		answerQuestion(question, answer) {
