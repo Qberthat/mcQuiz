@@ -6,9 +6,11 @@
 	margin-top: 0px;
 	border-top: 1px solid grey;
 }
+
 .copyright {
 	margin-top: 5px;
 }
+
 a[href$="/mcQuiz"]{
 	margin-top: 10px;
 	border: 0.5px solid lightgray;
@@ -17,6 +19,7 @@ a[href$="/mcQuiz"]{
 	color: black;
 	display: block;
 }
+
 a[href$="/mcQuiz"]:hover{
 	text-decoration: none;
 	background-color: #d3d3d381;

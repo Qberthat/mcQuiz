@@ -8,10 +8,6 @@ export default Service.extend({
 		this.store.createRecord('user')
 	},
 
-	addAnswer(user, answer){
-		user.answers.pushObject(answer);
-	},
-
 	getUser() {
 		const users = this.store.peekAll('user');
 		return (users != null) ? users.firstObject : null;

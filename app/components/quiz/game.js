@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { inject } from '@ember/service';
-import { run, later } from '@ember/runloop';
+import { run } from '@ember/runloop';
 
 export default Component.extend({
 	router: inject(),
@@ -12,13 +12,9 @@ export default Component.extend({
 	currentQuestionIndex: null,
 	selectNextQuestion: null,
 	selectedAnswer: null,
-	disableSubmit: null,
 	isAnswered: false,
 	isChecked: false,
 	isTrue: false,
-	questionnaireLength: null,
-	answer: null,
-	timer: null,
 
 	/*
 	*Gets the the question from the current index with its answers
@@ -37,9 +33,9 @@ export default Component.extend({
 		return parseInt(currQuestion + 1);
 	}),
 
-	countdown: run.later(function(){
+	timer: run.later(function(){
 
-}),
+	}),
 
 	actions: {
 		/*
@@ -58,12 +54,10 @@ export default Component.extend({
 			this.set('isAnswered', false);
 			this.set('isChecked', false);
 		},
+
 		submitAnswer() {
 			this.get('answerQuestion')(this.get('currentQuestion'), this.get('selectedAnswer'));
 			this.send('selectNextQuestion');
-			/* if (this.get('currentQuestionIndex')+ 1 > this.get(('questionnaireLength'))) {
-			
-				}  */
 		},
 	}
 });

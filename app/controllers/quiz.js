@@ -39,18 +39,7 @@ export default Controller.extend({
 		} 
 		return [];
 	}),
-/* 
-	loadAnswers: computed('answers', {
-		get() {
-			return this.get('answers');
-		},
-		set(key, value) {
-			let [answers] = (value, this.answerManager.getAnswers())
-			this.set('answers', answers)
-			return answers
-		}
-	}),
-	 */
+
 	questionIndexGreaterThan: computed("currentQuestionIndex", function(){
 		let nextIndex = this.get('currentQuestionIndex');
 		return (nextIndex + 1);
@@ -80,16 +69,16 @@ export default Controller.extend({
 
 		answerQuestion(question, answer) {
 			this.answerManager.answer(question, answer, this.get('user'));
-
 			if (answer == question.correct_answer){
-				this.set('responseMessage', "Congratulations, your answer was correct!")
-				return this.set('quizScore', this.get('quizScore') + 2 )
-		
+				this.set('responseMessage', "Congratulations, your answer was correct!");
+				return this.set('quizScore', this.get('quizScore') + 2 );
 			} else {
-				this.set('responseMessage', "Your answer was wrong. :( The right answer was" + " " + this.quotMark + question.correct_answer + this.quotMark)
+				this.set('responseMessage', "Your answer was wrong. :( The right answer was"
+					+ " " + this.quotMark + question.correct_answer + this.quotMark);
 				return this.get('quizScore');
 			}
 		},
+
 		getAnswered() {
 			this.set('answers', this.answerManager.getAnswers());
 		},

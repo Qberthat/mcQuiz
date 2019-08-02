@@ -3,7 +3,6 @@ import { inject } from '@ember/service';
 
 export default Controller.extend({
 	userManager: inject(),
-	store: inject(),
 	
 	actions: {
 		startQuiz() {
