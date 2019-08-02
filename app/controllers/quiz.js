@@ -14,11 +14,9 @@ export default Controller.extend({
 	currentQuestionIndex: 0,
 	quizScore: 0,
 	quotMark: "'",
-	questionnaireLength: 15,
+	questionnaireLength: 2,
 	responseMessage:'',
 	seconds: 30,
-	start: null,
-	interval: null,
 
 	startTimer: on('init', function() {
 		const controller = this;
@@ -60,18 +58,6 @@ export default Controller.extend({
 		return parseInt(totalScore * 2);
 	}),
 
-	/**timer: computed('currentQuestionIndex', function(){
-		const _this = this;
-		let seconds = this.get('seconds')
-		if (_this.interval === null) {
-			_this.set('start', Date.now() + 1000*31);
-			_this.interval = setInterval(function() {
-				const start = _this.get('start');
-				_this.set('seconds', start - Date.now() );
-			}, 1000);
-		}
-		return parseInt(seconds / 1000);
-	}),
 
 		/**
 			*selectNextQuestion() =

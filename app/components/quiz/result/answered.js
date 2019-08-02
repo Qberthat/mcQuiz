@@ -6,7 +6,7 @@ export default Component.extend({
 
 	actions: {
 		showAnswered() {
-			this.get('getAnswered')(this.get('answers'));
+			this.get('getAnswered');
 			this.set('showAnswers', true)
 		}, 
 	}

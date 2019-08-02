@@ -2,7 +2,8 @@
 	<div class="quizContainerQuestions">
 		{{#if question}}
 			<h3>{{question.question}}</h3>
-			<h5><strong>Difficulty: {{question.difficulty}}</strong></h5> 
+			<h5><strong>{{question.category}}</strong> <br>
+			<strong>Difficulty: {{question.difficulty}}</strong></h5> 
 			<p>Time: {{timer}}s</p>
 			<div>Question: {{currentQuestionNum}} out of {{questionnaireLength}}</div>
 			<br>

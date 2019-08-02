@@ -4,6 +4,5 @@ const { Model } = DS;
 export default Model.extend({
 	question: DS.belongsTo('question'),
 	content: DS.attr('string'),
-	user: DS.belongsTo('user'),
 });
 

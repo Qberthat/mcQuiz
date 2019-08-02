@@ -11,9 +11,7 @@ export default Component.extend({
 	currentQuestionIndex: null,
 	selectNextQuestion: null,
 	selectedAnswer: null,
-	isAnswered: false,
 	isChecked: false,
-	isTrue: false,
 
 
 	/*
@@ -47,7 +45,6 @@ export default Component.extend({
 		 */
 		selectNextQuestion() {
 			this.get('selectNextQuestion')();
-			this.set('isAnswered', false);
 			this.set('isChecked', false);
 		},
 
