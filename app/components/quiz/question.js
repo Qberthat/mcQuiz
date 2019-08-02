@@ -10,8 +10,7 @@ export default Component.extend({
 		*Randomizes the answer locations
 	*/
 	answers: computed('question', function() {
-		let newArr = this.get('question.incorrect_answers')
-		.concat([this.get('question.correct_answer')]);
+		let newArr = this.get('question.incorrect_answers').concat([this.get('question.correct_answer')]);
 		let counter = newArr.length, temp, index;
 		while (counter > 0 ){
 			index = Math.floor(Math.random() * counter);

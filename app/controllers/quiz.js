@@ -16,7 +16,7 @@ export default Controller.extend({
 	quotMark: "'",
 	questionnaireLength: 2,
 	responseMessage:'',
-	seconds: 30,
+	seconds: 10,
 
 	startTimer: on('init', function() {
 		const controller = this;
@@ -74,7 +74,7 @@ export default Controller.extend({
 
 		selectNextQuestion() {
 			this.set('currentQuestionIndex', this.get('currentQuestionIndex') + 1);
-			this.set('seconds', 30);
+			this.set('seconds', 10);
 		},
 
 		answerQuestion(question, answer) {
