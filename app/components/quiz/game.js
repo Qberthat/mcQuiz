@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { inject } from '@ember/service';
-import { run } from '@ember/runloop';
 
 export default Component.extend({
 	router: inject(),
@@ -15,6 +14,7 @@ export default Component.extend({
 	isAnswered: false,
 	isChecked: false,
 	isTrue: false,
+
 
 	/*
 	*Gets the the question from the current index with its answers
@@ -31,10 +31,6 @@ export default Component.extend({
 	currentQuestionNum: computed('currentQuestionIndex', function () {
 		let currQuestion = this.get('currentQuestionIndex');
 		return parseInt(currQuestion + 1);
-	}),
-
-	timer: run.later(function(){
-
 	}),
 
 	actions: {
