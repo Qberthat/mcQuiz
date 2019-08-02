@@ -7,13 +7,15 @@
 	questionnaireScore = questionnaireScore
 	currentQuestionNum = currentQuestionNum
 	timer = timer
-	duration = duration
-	time = time
-	seconds = seconds
+	isChecked = isChecked
 }}
 <form class="quizContainer">
 	<div class="quizContainerButtons">
-		<button type="submit" {{action "submitAnswer"}}>Submit answer</button>
+		{{#if isChecked}}
+			<button type="submit" {{action "submitAnswer"}}>Submit answer</button>
+		{{else}}
+			<button type="submit" {{action "submitAnswer"}} disabled>Submit answer</button>
+		{{/if}}
 	</div>
 </form>
 <p style="font-size: 20px"><strong>{{responseMessage}}</strong></p>
